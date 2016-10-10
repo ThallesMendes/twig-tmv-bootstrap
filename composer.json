@@ -1,0 +1,29 @@
+{
+  "name": "ambientesoft/twig-tmv-bootstrap",
+  "type": "library",
+  "description": "Biblioteca de funções para ser usada com twig para agilizar no desenvolvimento do html",
+  "keywords": ["symfony","base","twig", "bootstrap", "html", "forms", "fast"],
+  "license": ["GPL-3.0+","LGPL-3.0+"],
+  "require": {
+    "silex/silex": "~1.3",
+    "symfony/twig-bridge": "^3.0",
+    "ambientesoft/fasttmv" : "^1.4"
+  },
+  "require-dev":{
+    "phpunit/phpunit": "3.7.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Twigtmv\\Classes\\": "class/",
+      "Twigtmv\\Tests\\" : "tests/",
+      "Twigtmv\\Interfaces\\": "interface/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  },
+  "minimum-stability": "dev"
+
+}
