@@ -26,7 +26,7 @@ class TwigForm
 
     public function initFunctions()
     {
-        Twig::getInstance()->getTwig()->addFunction( new \Twig_Function('basicInput', array($this, 'basicInput')) );
+        Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicInput', array($this, 'basicInput')) );
     }
 
     public function basicInput( $id, $label, $colsm, $colmd, $type="text", $placeholder="", $class="", $other="" ){
