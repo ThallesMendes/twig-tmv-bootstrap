@@ -34,7 +34,7 @@ class TwigForm
                     <label class="control-label">'. $label .'</label>
                     <input type="'. $type .'" placeholder="'. $placeholder .'" class="form-control '. $class .'" id="'. $id .'" '. $other .'>
                 </div>';
-        return trim($html);
+        echo trim($html);
 
     }
 }
