@@ -30,11 +30,11 @@ class TwigForm
     }
 
     public function basicInput( $id, $label, $colsm, $colmd, $type="text", $placeholder="", $class="", $other="" ){
-        $html = "<div class='col-sm-". $colsm ." col-md-". $colmd ."'>
-                    <label class='control-label'>". $label ."</label>
-                    <input type='". $type ."' placeholder='". $placeholder ."' class='form-control ". $class ."' id='". $id ."' ". $other .">
-                </div>";
-        return $html;
+        $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
+                    <label class="control-label">'. $label .'</label>
+                    <input type="'. $type .'" placeholder="'. $placeholder .'" class="form-control '. $class .'" id="'. $id .'" '. $other .'>
+                </div>';
+        return trim($html);
 
     }
 }
