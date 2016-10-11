@@ -84,10 +84,12 @@ class TwigForm
      * @param string $label
      * @param string $color
      */
-    public function basicCheckbox( $id, $label="", $color="default" ){
-        $html = '<div class="checkbox-custom checkbox-'. $color .'">
+    public function basicCheckbox( $id, $label, $colsm, $colmd, $color="default" ){
+        $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
+                 <div class="checkbox-custom checkbox-'. $color .'">
                       <input id="'. $id .'" type="checkbox" name="'. $id .'" />
                       <label>'. $label .'</label>
+                 </div>
                  </div>';
         echo trim($html);
     }
