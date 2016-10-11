@@ -88,7 +88,7 @@ class TwigForm
         $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
                  <div class="checkbox-custom checkbox-'. $color .'">
                       <input id="'. $id .'" type="checkbox" name="'. $id .'" />
-                      <label>'. $label .'</label>
+                      <label for="'. $id .'">'. $label .'</label>
                  </div>
                  </div>';
         echo trim($html);
