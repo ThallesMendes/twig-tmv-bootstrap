@@ -114,11 +114,18 @@ class TwigForm
      * @param $id
      * @param $icon
      * @param string $color
+     * @param string $tooltip
      * @param string $class
      * @param string $other
      */
-    public function actionButton( $id, $icon, $color="default", $class="", $other="" ){
-        $html = '<button id="'. $id .'" type="button" class="btn-raised btn btn-'. $color .' btn-floating ' . $class . '" '. $other .'>
+    public function actionButton( $id, $icon, $color="default", $tooltip="", $class="", $other="" ){
+        $htmltooltip = "";
+        if( $tooltip <> "" ){
+            $htmltooltip = 'data-toggle="tooltip" data-placement="top" data-original-title="'. $tooltip .'"';
+            $class       .= ' tooltip-' . $color;
+        }
+
+        $html = '<button id="'. $id .'" type="button" class="btn-raised btn btn-'. $color .' btn-floating ' . $class . '" '. $other .' '. $htmltooltip. '>
                     <i class="'. $icon .'" aria-hidden="true"></i>
                 </button>';
         echo trim($html);
