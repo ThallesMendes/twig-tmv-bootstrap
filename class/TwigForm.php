@@ -34,6 +34,7 @@ class TwigForm
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicButton', array($this, 'basicButton')) );
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('actionButton', array($this, 'actionButton')) );
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicTextarea', array($this, 'basicTextarea')) );
+        Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicCheckbox', array($this, 'basicCheckbox')) );
     }
 
     /**
@@ -74,6 +75,20 @@ class TwigForm
                     <textarea id="'. $id .'" class="maxlength-textarea form-control '. $class .'" data-plugin="maxlength" data-placement="bottom-right-inside"
                   maxlength="'. $maxlength .'" rows="'. $rows .'" placeholder="'. $placeholder .'" '. $other .'></textarea>
                 </div>';
+        echo trim($html);
+    }
+
+    /**
+     * Gera um elemento HTML de checkbox basico seguindo padrões do bootstrap
+     * @param $id
+     * @param string $label
+     * @param string $color
+     */
+    public function basicCheckbox( $id, $label="", $color="default" ){
+        $html = '<div class="checkbox-custom checkbox-'. $color .'">
+                      <input id="'. $id .'" type="checkbox" name="'. $id .'" />
+                      <label>'. $label .'</label>
+                 </div>';
         echo trim($html);
     }
 
