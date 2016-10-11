@@ -74,6 +74,7 @@ class TwigForm
             $html .= '<option value="'. $v .'" >' . $labels[$i] . '</option>';
             $i++;
         }
+        $html .= '</select>';
         $html .= '</div>';
 
         echo trim($html);
