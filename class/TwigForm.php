@@ -33,6 +33,7 @@ class TwigForm
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicSelect', array($this, 'basicSelect')) );
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicButton', array($this, 'basicButton')) );
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('actionButton', array($this, 'actionButton')) );
+        Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicTextarea', array($this, 'basicTextarea')) );
     }
 
     /**
@@ -53,6 +54,27 @@ class TwigForm
                 </div>';
         echo trim($html);
 
+    }
+
+    /**
+     * Gera um elemento HTML de textarea basico seguindo padrões do bootstrap
+     * @param $id
+     * @param $label
+     * @param $colsm
+     * @param $colmd
+     * @param int $maxlength
+     * @param int $rows
+     * @param string $placeholder
+     * @param string $class
+     * @param string $other
+     */
+    public function basicTextarea( $id, $label, $colsm, $colmd, $maxlength=200,$rows=3, $placeholder="", $class="", $other="" ){
+        $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
+                    <label class="control-label">'. $label .'</label>
+                    <textarea id="'. $id .'" class="maxlength-textarea form-control '. $class .'" data-plugin="maxlength" data-placement="bottom-right-inside"
+                  maxlength="'. $maxlength .'" rows="'. $rows .'" placeholder="'. $placeholder .'" '. $other .'></textarea>
+                </div>';
+        echo trim($html);
     }
 
     /**
@@ -83,6 +105,7 @@ class TwigForm
     }
 
     /**
+     * Gera um elemento HTML de button basico seguindo padrões do bootstrap
      * @param $id
      * @param $label
      * @param string $icon
@@ -111,6 +134,8 @@ class TwigForm
     }
 
     /**
+     * Gera um elemento HTML de button de ação seguindo padrões do bootstrap
+     * Verifique a compatibilidade com o template utilizado
      * @param $id
      * @param $icon
      * @param string $color
@@ -130,4 +155,6 @@ class TwigForm
                 </button>';
         echo trim($html);
     }
+
+
 }
