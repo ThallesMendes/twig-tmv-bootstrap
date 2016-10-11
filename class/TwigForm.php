@@ -31,6 +31,8 @@ class TwigForm
     {
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicInput', array($this, 'basicInput')) );
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicSelect', array($this, 'basicSelect')) );
+        Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicButton', array($this, 'basicButton')) );
+        Twig::getInstance()->getTwig()->addFunction( new TwigFunction('actionButton', array($this, 'actionButton')) );
     }
 
     /**
@@ -77,6 +79,48 @@ class TwigForm
         $html .= '</select>';
         $html .= '</div>';
 
+        echo trim($html);
+    }
+
+    /**
+     * @param $id
+     * @param $label
+     * @param string $icon
+     * @param string $color
+     * @param string $type
+     * @param string $href
+     * @param string $class
+     * @param string $other
+     */
+    public function basicButton( $id, $label, $icon="", $color="default", $type="button", $href="#", $class="", $other="" ){
+        $htmlicon = "";
+        $html     = "";
+
+        if($icon <> ""){
+            $htmlicon = '<i class="'. $icon .'" aria-hidden="true"></i> ';
+        }
+
+        if($type=="button"){
+            $html = '<button id="'. $id .'" type="button" class="btn btn-'. $color .' ' . $class .'" ' . $other . '>'. $htmlicon . $label .'</button>';
+        }
+        else if( $type=="a" ) {
+            $html = '<a id="'. $id .'" href="'. $href .'" class="btn btn-'. $color .' ' . $class .'" ' . $other . '>'. $htmlicon .$label .'</a>';
+        }
+
+        echo trim($html);
+    }
+
+    /**
+     * @param $id
+     * @param $icon
+     * @param string $color
+     * @param string $class
+     * @param string $other
+     */
+    public function actionButton( $id, $icon, $color="default", $class="", $other="" ){
+        $html = '<button id="'. $id .'" type="button" class="btn-raised btn btn-'. $color .' btn-floating ' . $class . '" '. $other .'>
+                    <i class="'. $icon .'" aria-hidden="true"></i>
+                </button>';
         echo trim($html);
     }
 }
