@@ -47,14 +47,34 @@ class TwigForm
      * @param string $placeholder   - placeholder do input
      * @param string $class         - class css extra para input
      * @param string $other         - propiedade extra para o input
+     * @param boolean $echo
+     * @return void|string
      */
-    public function basicInput( $id, $label, $colsm, $colmd, $type="text", $placeholder="", $class="", $other="" ){
+    public function basicInput( $id, $label, $colsm, $colmd, $type="text", $placeholder="", $class="", $other="", $echo=true ){
         $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
                     <label class="control-label">'. $label .'</label>
                     <input type="'. $type .'" placeholder="'. $placeholder .'" class="form-control '. $class .'" id="'. $id .'" '. $other .'>
                 </div>';
-        echo trim($html);
+        if($echo)
+            echo trim($html);
+        else
+            return trim($html);
 
+    }
+
+    /**
+     * @param $id
+     * @param string $value
+     * @param string $other
+     * @param boolean $echo
+     * @return void|string
+     */
+    public function basicHidden( $id, $value="" ,$other="", $echo=true ){
+        $html = '<input type="hidden" id="'. $id .'" value="'. $value .'" '. $other .'>';
+        if($echo)
+            echo trim($html);
+        else
+            return trim($html);
     }
 
     /**
@@ -68,14 +88,19 @@ class TwigForm
      * @param string $placeholder
      * @param string $class
      * @param string $other
+     * @param boolean $echo
+     * @return void|string
      */
-    public function basicTextarea( $id, $label, $colsm, $colmd, $maxlength=200,$rows=3, $placeholder="", $class="", $other="" ){
+    public function basicTextarea( $id, $label, $colsm, $colmd, $maxlength=200,$rows=3, $placeholder="", $class="", $other="", $echo=true ){
         $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
                     <label class="control-label">'. $label .'</label>
                     <textarea id="'. $id .'" class="maxlength-textarea form-control '. $class .'" data-plugin="maxlength" data-placement="bottom-right-inside"
                   maxlength="'. $maxlength .'" rows="'. $rows .'" placeholder="'. $placeholder .'" '. $other .'></textarea>
                 </div>';
-        echo trim($html);
+        if($echo)
+            echo trim($html);
+        else
+            return trim($html);
     }
 
     /**
@@ -83,15 +108,20 @@ class TwigForm
      * @param $id
      * @param string $label
      * @param string $color
+     * @param boolean $echo
+     * @return void|string
      */
-    public function basicCheckbox( $id, $label, $colsm, $colmd, $color="default" ){
+    public function basicCheckbox( $id, $label, $colsm, $colmd, $color="default", $echo=true ){
         $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
                  <div class="checkbox-custom checkbox-'. $color .'">
                       <input id="'. $id .'" type="checkbox" name="'. $id .'" />
                       <label for="'. $id .'">'. $label .'</label>
                  </div>
                  </div>';
-        echo trim($html);
+        if($echo)
+            echo trim($html);
+        else
+            return trim($html);
     }
 
     /**
@@ -104,8 +134,10 @@ class TwigForm
      * @param $labels
      * @param string $class
      * @param string $other
+     * @param boolean $echo
+     * @return void|string
      */
-    public function basicSelect( $id, $label, $colsm, $colmd, $values, $labels, $class="", $other="" ){
+    public function basicSelect( $id, $label, $colsm, $colmd, $values, $labels, $class="", $other="", $echo=true ){
         $html   = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
                     <label class="control-label">'. $label .'</label>
                     <select class="form-control '. $class .'" id="'. $id .'" '. $other .'>';
@@ -118,7 +150,10 @@ class TwigForm
         $html .= '</select>';
         $html .= '</div>';
 
-        echo trim($html);
+        if($echo)
+            echo trim($html);
+        else
+            return trim($html);
     }
 
     /**
@@ -131,8 +166,10 @@ class TwigForm
      * @param string $href
      * @param string $class
      * @param string $other
+     * @param boolean $echo
+     * @return void|string
      */
-    public function basicButton( $id, $label, $icon="", $color="default", $type="button", $href="#", $class="", $other="" ){
+    public function basicButton( $id, $label, $icon="", $color="default", $type="button", $href="#", $class="", $other="", $echo=true ){
         $htmlicon = "";
         $html     = "";
 
@@ -147,7 +184,10 @@ class TwigForm
             $html = '<a id="'. $id .'" href="'. $href .'" class="btn btn-'. $color .' ' . $class .'" ' . $other . '>'. $htmlicon .$label .'</a>';
         }
 
-        echo trim($html);
+        if($echo)
+            echo trim($html);
+        else
+            return trim($html);
     }
 
     /**
@@ -159,8 +199,10 @@ class TwigForm
      * @param string $tooltip
      * @param string $class
      * @param string $other
+     * @param boolean $echo
+     * @return void|string
      */
-    public function actionButton( $id, $icon, $color="default", $tooltip="", $class="", $other="" ){
+    public function actionButton( $id, $icon, $color="default", $tooltip="", $class="", $other="", $echo=true ){
         $htmltooltip = "";
         if( $tooltip <> "" ){
             $htmltooltip = 'data-toggle="tooltip" data-placement="top" data-original-title="'. $tooltip .'"';
@@ -170,7 +212,10 @@ class TwigForm
         $html = '<button id="'. $id .'" type="button" class="btn-raised btn btn-'. $color .' btn-floating ' . $class . '" '. $other .' '. $htmltooltip. '>
                     <i class="'. $icon .'" aria-hidden="true"></i>
                 </button>';
-        echo trim($html);
+        if($echo)
+            echo trim($html);
+        else
+            return trim($html);
     }
 
 
