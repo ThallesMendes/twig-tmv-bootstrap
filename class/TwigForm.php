@@ -54,7 +54,7 @@ class TwigForm
     public function basicInput( $id, $label, $colsm, $colmd, $type="text", $placeholder="", $class="", $other="", $echo=true ){
         $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
                     <label class="control-label">'. $label .'</label>
-                    <input type="'. $type .'" placeholder="'. $placeholder .'" class="form-control '. $class .'" id="'. $id .'" '. $other .'>
+                    <input type="'. $type .'" placeholder="'. $placeholder .'" class="form-control '. $class .'" id="'. $id .'" name="'. $id .'" '. $other .'>
                 </div>';
         if($echo)
             echo trim($html);
@@ -71,7 +71,7 @@ class TwigForm
      * @return void|string
      */
     public function basicHidden( $id, $value="" ,$other="", $echo=true ){
-        $html = '<input type="hidden" id="'. $id .'" value="'. $value .'" '. $other .'>';
+        $html = '<input type="hidden" id="'. $id .'" name="'. $id .'" value="'. $value .'" '. $other .'>';
         if($echo)
             echo trim($html);
         else
@@ -95,7 +95,7 @@ class TwigForm
     public function basicTextarea( $id, $label, $colsm, $colmd, $maxlength=200,$rows=3, $placeholder="", $class="", $other="", $echo=true ){
         $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
                     <label class="control-label">'. $label .'</label>
-                    <textarea id="'. $id .'" class="maxlength-textarea form-control '. $class .'" data-plugin="maxlength" data-placement="bottom-right-inside"
+                    <textarea id="'. $id .'" name="'. $id .'" class="maxlength-textarea form-control '. $class .'" data-plugin="maxlength" data-placement="bottom-right-inside"
                   maxlength="'. $maxlength .'" rows="'. $rows .'" placeholder="'. $placeholder .'" '. $other .'></textarea>
                 </div>';
         if($echo)
@@ -115,7 +115,7 @@ class TwigForm
     public function basicCheckbox( $id, $label, $colsm, $colmd, $color="default", $echo=true ){
         $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
                  <div class="checkbox-custom checkbox-'. $color .'">
-                      <input id="'. $id .'" type="checkbox" name="'. $id .'" />
+                      <input id="'. $id .'" name="'. $id .'" type="checkbox" name="'. $id .'" />
                       <label for="'. $id .'">'. $label .'</label>
                  </div>
                  </div>';
@@ -141,7 +141,7 @@ class TwigForm
     public function basicSelect( $id, $label, $colsm, $colmd, $values, $labels, $class="", $other="", $echo=true ){
         $html   = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
                     <label class="control-label">'. $label .'</label>
-                    <select class="form-control '. $class .'" id="'. $id .'" '. $other .'>';
+                    <select class="form-control '. $class .'" id="'. $id .'" name="'. $id .'" '. $other .'>';
         $i      = 0;
 
         foreach($values as $v){
@@ -179,7 +179,7 @@ class TwigForm
         }
 
         if($type=="button"){
-            $html = '<button id="'. $id .'" type="button" class="btn btn-'. $color .' ' . $class .'" ' . $other . '>'. $htmlicon . $label .'</button>';
+            $html = '<button id="'. $id .'" name="'. $id .'" type="button" class="btn btn-'. $color .' ' . $class .'" ' . $other . '>'. $htmlicon . $label .'</button>';
         }
         else if( $type=="a" ) {
             $html = '<a id="'. $id .'" href="'. $href .'" class="btn btn-'. $color .' ' . $class .'" ' . $other . '>'. $htmlicon .$label .'</a>';
@@ -210,7 +210,7 @@ class TwigForm
             $class       .= ' tooltip-' . $color;
         }
 
-        $html = '<button id="'. $id .'" type="button" class="btn-raised btn btn-'. $color .' btn-floating ' . $class . '" '. $other .' '. $htmltooltip. '>
+        $html = '<button id="'. $id .'" type="button" name="'. $id .'" class="btn-raised btn btn-'. $color .' btn-floating ' . $class . '" '. $other .' '. $htmltooltip. '>
                     <i class="'. $icon .'" aria-hidden="true"></i>
                 </button>';
         if($echo)
