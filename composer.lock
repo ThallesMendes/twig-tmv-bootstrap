@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8417c3d9898e508b90f85ce7b0f6f73e",
+    "content-hash": "8130376a68ad78c13d10fd7f9b2f5a1a",
     "packages": [
         {
             "name": "ambientesoft/fasttmv",
-            "version": "v1.4",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ThallesMendes/Fasttmv.git",
-                "reference": "a37a8417831473e2663d9cee1471d345cec3ef46"
+                "reference": "4078bfd15ecc6269dfd72f37074c47abdf32bece"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ThallesMendes/Fasttmv/zipball/a37a8417831473e2663d9cee1471d345cec3ef46",
-                "reference": "a37a8417831473e2663d9cee1471d345cec3ef46",
+                "url": "https://api.github.com/repos/ThallesMendes/Fasttmv/zipball/4078bfd15ecc6269dfd72f37074c47abdf32bece",
+                "reference": "4078bfd15ecc6269dfd72f37074c47abdf32bece",
                 "shasum": ""
             },
             "require": {
@@ -65,7 +65,7 @@
                 "projeto",
                 "symfony"
             ],
-            "time": "2016-09-27 20:36:33"
+            "time": "2016-10-21 17:46:56"
         },
         {
             "name": "doctrine/annotations",
@@ -73,31 +73,31 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "f9cf50745a45cae4a55f35e7691d124c4d887e45"
+                "reference": "e1dd28bbb27ab6fc1636575ec0b83465d2b8f0ed"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/f9cf50745a45cae4a55f35e7691d124c4d887e45",
-                "reference": "f9cf50745a45cae4a55f35e7691d124c4d887e45",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/e1dd28bbb27ab6fc1636575ec0b83465d2b8f0ed",
+                "reference": "e1dd28bbb27ab6fc1636575ec0b83465d2b8f0ed",
                 "shasum": ""
             },
             "require": {
                 "doctrine/lexer": "1.*",
-                "php": ">=5.3.2"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
                 "doctrine/cache": "1.*",
-                "phpunit/phpunit": "4.*"
+                "phpunit/phpunit": "^5.6.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.3.x-dev"
+                    "dev-master": "1.4.x-dev"
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Annotations\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Annotations\\": "lib/Doctrine/Common/Annotations"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -133,7 +133,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-08-31 09:31:57"
+            "time": "2016-10-24 11:59:51"
         },
         {
             "name": "doctrine/cache",
@@ -596,12 +596,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "47cb96373181173802801e4d1915ab919b145f23"
+                "reference": "26cf90e1c513305e1cc6529e4496130a7f0c6dcf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/47cb96373181173802801e4d1915ab919b145f23",
-                "reference": "47cb96373181173802801e4d1915ab919b145f23",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/26cf90e1c513305e1cc6529e4496130a7f0c6dcf",
+                "reference": "26cf90e1c513305e1cc6529e4496130a7f0c6dcf",
                 "shasum": ""
             },
             "require": {
@@ -667,7 +667,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2016-10-06 00:40:04"
+            "time": "2016-10-25 03:56:54"
         },
         {
             "name": "monolog/monolog",
@@ -749,16 +749,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf"
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/088c04e2f261c33bed6ca5245491cfca69195ccf",
-                "reference": "088c04e2f261c33bed6ca5245491cfca69195ccf",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c0125896dbb151380ab47e96c621741e79623beb",
+                "reference": "c0125896dbb151380ab47e96c621741e79623beb",
                 "shasum": ""
             },
             "require": {
@@ -793,7 +793,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-04-03 06:00:07"
+            "time": "2016-10-17 15:23:22"
         },
         {
             "name": "pimple/pimple",
@@ -894,12 +894,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silexphp/Silex.git",
-                "reference": "6bb64c08c7e2842e22b273b0c57c1864aa3bc9d6"
+                "reference": "09afa63e7d98b1751bd44db83145b69d67d4dd97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silexphp/Silex/zipball/6bb64c08c7e2842e22b273b0c57c1864aa3bc9d6",
-                "reference": "6bb64c08c7e2842e22b273b0c57c1864aa3bc9d6",
+                "url": "https://api.github.com/repos/silexphp/Silex/zipball/09afa63e7d98b1751bd44db83145b69d67d4dd97",
+                "reference": "09afa63e7d98b1751bd44db83145b69d67d4dd97",
                 "shasum": ""
             },
             "require": {
@@ -963,7 +963,7 @@
             "keywords": [
                 "microframework"
             ],
-            "time": "2016-09-26 20:55:41"
+            "time": "2016-10-12 02:12:04"
         },
         {
             "name": "symfony/console",
@@ -971,12 +971,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "e12930d96cc0c15fd1de61d14a037c707baa901f"
+                "reference": "72fafa731ed6dcfdeadc60ed92922e8d6ff451b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/e12930d96cc0c15fd1de61d14a037c707baa901f",
-                "reference": "e12930d96cc0c15fd1de61d14a037c707baa901f",
+                "url": "https://api.github.com/repos/symfony/console/zipball/72fafa731ed6dcfdeadc60ed92922e8d6ff451b5",
+                "reference": "72fafa731ed6dcfdeadc60ed92922e8d6ff451b5",
                 "shasum": ""
             },
             "require": {
@@ -1026,7 +1026,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-06 08:59:27"
+            "time": "2016-10-21 21:28:04"
         },
         {
             "name": "symfony/debug",
@@ -1790,12 +1790,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "460390765eb7bb9338a4a323b8a4e815a47541ba"
+                "reference": "7f401e7c2a499dfb6bbfac25c76f614e3ed4904b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/460390765eb7bb9338a4a323b8a4e815a47541ba",
-                "reference": "460390765eb7bb9338a4a323b8a4e815a47541ba",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/7f401e7c2a499dfb6bbfac25c76f614e3ed4904b",
+                "reference": "7f401e7c2a499dfb6bbfac25c76f614e3ed4904b",
                 "shasum": ""
             },
             "require": {
@@ -1846,7 +1846,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-21 17:16:56"
+            "time": "2016-10-18 04:30:21"
         },
         {
             "name": "symfony/twig-bridge",
@@ -1854,17 +1854,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/twig-bridge.git",
-                "reference": "c7739938a4bbd605b999fd3e64bcda57268dd05e"
+                "reference": "8acdf56eeb8af0ab25acc7c50769db0dd6883518"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/twig-bridge/zipball/c7739938a4bbd605b999fd3e64bcda57268dd05e",
-                "reference": "c7739938a4bbd605b999fd3e64bcda57268dd05e",
+                "url": "https://api.github.com/repos/symfony/twig-bridge/zipball/8acdf56eeb8af0ab25acc7c50769db0dd6883518",
+                "reference": "8acdf56eeb8af0ab25acc7c50769db0dd6883518",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.5.9",
-                "twig/twig": "~1.26|~2.0"
+                "twig/twig": "~1.27|~2.0"
             },
             "require-dev": {
                 "symfony/asset": "~2.8|~3.0",
@@ -1927,7 +1927,7 @@
             ],
             "description": "Symfony Twig Bridge",
             "homepage": "https://symfony.com",
-            "time": "2016-10-05 02:57:15"
+            "time": "2016-10-24 15:52:51"
         },
         {
             "name": "symfony/validator",
@@ -1935,12 +1935,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/validator.git",
-                "reference": "05ed0646d929e3ffa0967a91a37e6d3fca9c7c99"
+                "reference": "6536512176c5e8790676db3967f628990fa7ba72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/validator/zipball/05ed0646d929e3ffa0967a91a37e6d3fca9c7c99",
-                "reference": "05ed0646d929e3ffa0967a91a37e6d3fca9c7c99",
+                "url": "https://api.github.com/repos/symfony/validator/zipball/6536512176c5e8790676db3967f628990fa7ba72",
+                "reference": "6536512176c5e8790676db3967f628990fa7ba72",
                 "shasum": ""
             },
             "require": {
@@ -2001,7 +2001,7 @@
             ],
             "description": "Symfony Validator Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-05 08:12:34"
+            "time": "2016-10-19 22:03:14"
         },
         {
             "name": "symfony/yaml",
@@ -2009,12 +2009,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "e7540734bad981fe59f8ef14b6fc194ae9df8d9c"
+                "reference": "396784cd06b91f3db576f248f2402d547a077787"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/e7540734bad981fe59f8ef14b6fc194ae9df8d9c",
-                "reference": "e7540734bad981fe59f8ef14b6fc194ae9df8d9c",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/396784cd06b91f3db576f248f2402d547a077787",
+                "reference": "396784cd06b91f3db576f248f2402d547a077787",
                 "shasum": ""
             },
             "require": {
@@ -2050,20 +2050,20 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-02 01:57:56"
+            "time": "2016-10-21 20:59:10"
         },
         {
             "name": "twig/twig",
-            "version": "dev-master",
+            "version": "2.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twigphp/Twig.git",
-                "reference": "907366d05379156152bcb1862931a1687be71200"
+                "reference": "5e4fa99dc97ef98be3ca0b5e18d0e605e3cfe26d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/907366d05379156152bcb1862931a1687be71200",
-                "reference": "907366d05379156152bcb1862931a1687be71200",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/5e4fa99dc97ef98be3ca0b5e18d0e605e3cfe26d",
+                "reference": "5e4fa99dc97ef98be3ca0b5e18d0e605e3cfe26d",
                 "shasum": ""
             },
             "require": {
@@ -2112,7 +2112,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2016-10-05 18:16:59"
+            "time": "2016-10-24 23:59:56"
         }
     ],
     "packages-dev": [
@@ -2492,7 +2492,10 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "symfony/twig-bridge": 20,
+        "ambientesoft/fasttmv": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
