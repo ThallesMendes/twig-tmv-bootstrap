@@ -112,10 +112,10 @@ class TwigForm
      * @param boolean $echo
      * @return void|string
      */
-    public function basicCheckbox( $id, $label, $colsm, $colmd, $color="default", $echo=true ){
+    public function basicCheckbox( $id, $label, $colsm, $colmd, $color="default", $class="", $other="", $echo=true ){
         $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
-                 <div class="checkbox-custom checkbox-'. $color .'">
-                      <input id="'. $id .'" name="'. $id .'" type="checkbox" name="'. $id .'" />
+                 <div class="checkbox-custom checkbox-'. $color . ' ' . $class .'">
+                      <input id="'. $id .'" name="'. $id .'" type="checkbox" name="'. $id .'" ' . $other . '/>
                       <label for="'. $id .'">'. $label .'</label>
                  </div>
                  </div>';
