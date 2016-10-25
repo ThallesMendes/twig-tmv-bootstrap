@@ -165,17 +165,17 @@ class TwigForm
      * @param $colmd
      * @param $ngrepeat
      * @param $value
-     * @param $label
+     * @param $labelan
      * @param string $class
      * @param string $other
      * @param bool $echo
      * @return string
      */
-    public function angularSelect( $id, $label, $colsm, $colmd, $ngrepeat, $value, $label, $class="", $other="", $echo=true ){
+    public function angularSelect( $id, $label, $colsm, $colmd, $ngrepeat, $value, $labelan, $class="", $other="", $echo=true ){
         $html   = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
                     <label class="control-label">'. $label .'</label>
                     <select class="form-control '. $class .'" id="'. $id .'" name="'. $id .'" '. $other .'>';
-        $html .=   '<option ng-repeat="'. $ngrepeat .'" value="'. $value .'" >' . $label . '</option>';
+        $html .=   '<option ng-repeat="'. $ngrepeat .'" value="'. $value .'" >' . $labelan . '</option>';
 
         $html .= '</select>';
         $html .= '</div>';
