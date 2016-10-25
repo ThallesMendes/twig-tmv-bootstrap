@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a8dab9cbd0d246ad8160e5f4e45b342",
+    "content-hash": "49aee29d685423091761f67c3710e282",
     "packages": [
         {
             "name": "ambientesoft/fasttmv",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ThallesMendes/Fasttmv.git",
-                "reference": "4078bfd15ecc6269dfd72f37074c47abdf32bece"
+                "reference": "6c3ff6bc568ff01bdb5892280d63001c9eb74330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ThallesMendes/Fasttmv/zipball/4078bfd15ecc6269dfd72f37074c47abdf32bece",
-                "reference": "4078bfd15ecc6269dfd72f37074c47abdf32bece",
+                "url": "https://api.github.com/repos/ThallesMendes/Fasttmv/zipball/6c3ff6bc568ff01bdb5892280d63001c9eb74330",
+                "reference": "6c3ff6bc568ff01bdb5892280d63001c9eb74330",
                 "shasum": ""
             },
             "require": {
@@ -25,7 +25,6 @@
                 "monolog/monolog": "^1.19",
                 "silex/silex": "~1.3",
                 "symfony/security": "^3.0",
-                "symfony/twig-bridge": "^3.0",
                 "symfony/validator": "^3.0",
                 "symfony/yaml": "2.*"
             },
@@ -65,7 +64,7 @@
                 "projeto",
                 "symfony"
             ],
-            "time": "2016-10-21 17:46:56"
+            "time": "2016-10-25 13:30:57"
         },
         {
             "name": "doctrine/annotations",
@@ -2493,7 +2492,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "ambientesoft/fasttmv": 20
+        "ambientesoft/fasttmv": 20,
+        "twig/twig": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

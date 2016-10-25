@@ -36,6 +36,7 @@ class TwigForm
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicTextarea', array($this, 'basicTextarea')) );
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicCheckbox', array($this, 'basicCheckbox')) );
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicHidden', array($this, 'basicHidden')) );
+        Twig::getInstance()->getTwig()->addFunction( new TwigFunction('angularSelect', array($this, 'angularSelect')) );
     }
 
     /**
@@ -148,6 +149,34 @@ class TwigForm
             $html .= '<option value="'. $v .'" >' . $labels[$i] . '</option>';
             $i++;
         }
+        $html .= '</select>';
+        $html .= '</div>';
+
+        if($echo)
+            echo trim($html);
+        else
+            return trim($html);
+    }
+
+    /** Gera um elemento html usando a tag angular ng-repeat
+     * @param $id
+     * @param $label
+     * @param $colsm
+     * @param $colmd
+     * @param $ngrepeat
+     * @param $value
+     * @param $label
+     * @param string $class
+     * @param string $other
+     * @param bool $echo
+     * @return string
+     */
+    public function angularSelect( $id, $label, $colsm, $colmd, $ngrepeat, $value, $label, $class="", $other="", $echo=true ){
+        $html   = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
+                    <label class="control-label">'. $label .'</label>
+                    <select class="form-control '. $class .'" id="'. $id .'" name="'. $id .'" '. $other .'>';
+        $html .=   '<option ng-repeat="'. $ngrepeat .'" value="'. $value .'" >' . $label . '</option>';
+
         $html .= '</select>';
         $html .= '</div>';
 
