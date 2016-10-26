@@ -37,6 +37,7 @@ class TwigForm
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicCheckbox', array($this, 'basicCheckbox')) );
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicHidden', array($this, 'basicHidden')) );
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('angularSelect', array($this, 'angularSelect')) );
+        Twig::getInstance()->getTwig()->addFunction( new TwigFunction('angularSelect2', array($this, 'angularSelect2')) );
     }
 
     /**
