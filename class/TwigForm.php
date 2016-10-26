@@ -158,7 +158,7 @@ class TwigForm
             return trim($html);
     }
 
-    /** Gera um elemento html usando a tag angular ng-repeat
+    /** Gera um elemento html usando a propiedade angular ng-repeat
      * @param $id
      * @param $label
      * @param $colsm
@@ -181,6 +181,31 @@ class TwigForm
                     <label class="control-label">'. $label .'</label>
                     <select class="form-control '. $class .'" id="'. $id .'" name="'. $id .'" '. $other .'>';
         $html .=   '<option ng-repeat="'. $ngrepeat .'" '. $ngselected .' value="'. $value .'" >' . $labelan . '</option>';
+
+        $html .= '</select>';
+        $html .= '</div>';
+
+        if($echo)
+            echo trim($html);
+        else
+            return trim($html);
+    }
+
+    /** Gera um elemento html usando a propieda angular ng-options
+     * @param $id
+     * @param $label
+     * @param $colsm
+     * @param $colmd
+     * @param $ngoptions
+     * @param string $class
+     * @param string $other
+     * @param bool $echo
+     * @return string
+     */
+    public function angularSelect2( $id, $label, $colsm, $colmd, $ngoptions, $class="", $other="", $echo=true ){
+        $html   = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
+                    <label class="control-label">'. $label .'</label>
+                    <select ng-options="'. $ngoptions .'" class="form-control '. $class .'" id="'. $id .'" name="'. $id .'" '. $other .'>';
 
         $html .= '</select>';
         $html .= '</div>';
