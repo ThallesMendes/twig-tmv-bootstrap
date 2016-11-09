@@ -314,7 +314,7 @@ class TwigForm
         $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
                         <label class="control-label">'. $label .'</label>
                         <div class="input-group">
-                        <select ng-options="'. $ngoptions .'" class="form-control '. $class .'" id="'. $id .'" name="'. $id .'" '. $other .'>
+                        <select ng-options="'. $ngoptions .'" class="form-control '. $class .'" id="'. $id .'" name="'. $id .'" '. $other .'></select>
                             <span class="input-group-btn">
                               <button type="submit" class="btn btn-'. $colorbtn .'" '. $otherbtn .'>
                                   <i class="'. $icon .'" aria-hidden="true"></i>
