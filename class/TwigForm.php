@@ -38,6 +38,9 @@ class TwigForm
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('basicHidden', array($this, 'basicHidden')) );
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('angularSelect', array($this, 'angularSelect')) );
         Twig::getInstance()->getTwig()->addFunction( new TwigFunction('angularSelect2', array($this, 'angularSelect2')) );
+        Twig::getInstance()->getTwig()->addFunction( new TwigFunction('btnInput', array($this, 'btnInput')) );
+        Twig::getInstance()->getTwig()->addFunction( new TwigFunction('btnSelect', array($this, 'btnSelect')) );
+        Twig::getInstance()->getTwig()->addFunction( new TwigFunction('btnAngularSelect', array($this, 'btnAngularSelect')) );
     }
 
     /**
@@ -63,6 +66,39 @@ class TwigForm
         else
             return trim($html);
 
+    }
+
+    /** Gera um elemento input acompanhado de um botão do lado direito
+     * @param $id
+     * @param $label
+     * @param $colsm
+     * @param $colmd
+     * @param $icon
+     * @param string $colorbtn
+     * @param string $type
+     * @param string $placeholder
+     * @param string $class
+     * @param string $other
+     * @param string $otherbtn
+     * @param bool $echo
+     * @return string
+     */
+    public function btnInput( $id, $label, $colsm, $colmd, $icon, $colorbtn="default" ,$type="text", $placeholder="", $class="", $other="", $otherbtn="", $echo=true ){
+        $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
+                        <label class="control-label">'. $label .'</label>
+                        <div class="input-group">
+                            <input type="'. $type .'" placeholder="'. $placeholder .'" class="form-control '. $class .'" id="'. $id .'" name="'. $id .'" '. $other .'>
+                            <span class="input-group-btn">
+                              <button type="submit" class="btn btn-'. $colorbtn .'" '. $otherbtn .'>
+                                  <i class="'. $icon .'" aria-hidden="true"></i>
+                              </button>
+                            </span>
+                        </div>
+                    </div>';
+        if($echo)
+            echo trim($html);
+        else
+            return trim($html);
     }
 
     /**
@@ -111,6 +147,8 @@ class TwigForm
      * @param $id
      * @param string $label
      * @param string $color
+     * @param string $class
+     * @param string $other
      * @param boolean $echo
      * @return void|string
      */
@@ -153,6 +191,47 @@ class TwigForm
         $html .= '</select>';
         $html .= '</div>';
 
+        if($echo)
+            echo trim($html);
+        else
+            return trim($html);
+    }
+
+    /** Gera um elemento HTML de select com botão a direita
+     * @param $id
+     * @param $label
+     * @param $colsm
+     * @param $colmd
+     * @param $values
+     * @param $labels
+     * @param $icon
+     * @param string $colorbtn
+     * @param string $class
+     * @param string $other
+     * @param string $otherbtn
+     * @param bool $echo
+     * @return string
+     */
+    public function btnSelect( $id, $label, $colsm, $colmd, $values, $labels, $icon, $colorbtn="default", $class="", $other="", $otherbtn="", $echo=true ){
+        $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
+                        <label class="control-label">'. $label .'</label>
+                        <div class="input-group">
+                            <select class="form-control '. $class .'" id="'. $id .'" name="'. $id .'" '. $other .'>';
+        $i      = 0;
+
+        foreach($values as $v){
+            $html .= '<option value="'. $v .'" >' . $labels[$i] . '</option>';
+            $i++;
+        }
+
+        $html .=           '</select>';
+        $html .=           '<span class="input-group-btn">
+                              <button type="submit" class="btn btn-'. $colorbtn .'" '. $otherbtn .'>
+                                  <i class="'. $icon .'" aria-hidden="true"></i>
+                              </button>
+                            </span>
+                        </div>
+                    </div>';
         if($echo)
             echo trim($html);
         else
@@ -211,6 +290,38 @@ class TwigForm
         $html .= '</select>';
         $html .= '</div>';
 
+        if($echo)
+            echo trim($html);
+        else
+            return trim($html);
+    }
+
+    /** Gera um elemento html de select utilizando angular ng-options com botão do lado direito
+     * @param $id
+     * @param $label
+     * @param $colsm
+     * @param $colmd
+     * @param $ngoptions
+     * @param $icon
+     * @param string $colorbtn
+     * @param string $class
+     * @param string $other
+     * @param string $otherbtn
+     * @param bool $echo
+     * @return string
+     */
+    public function btnAngularSelect($id, $label, $colsm, $colmd, $ngoptions, $icon, $colorbtn="", $class="", $other="", $otherbtn="", $echo=true){
+        $html = '<div class="col-sm-'. $colsm .' col-md-'. $colmd .'">
+                        <label class="control-label">'. $label .'</label>
+                        <div class="input-group">
+                        <select ng-options="'. $ngoptions .'" class="form-control '. $class .'" id="'. $id .'" name="'. $id .'" '. $other .'>
+                            <span class="input-group-btn">
+                              <button type="submit" class="btn btn-'. $colorbtn .'" '. $otherbtn .'>
+                                  <i class="'. $icon .'" aria-hidden="true"></i>
+                              </button>
+                            </span>
+                        </div>
+                    </div>';
         if($echo)
             echo trim($html);
         else
@@ -278,6 +389,8 @@ class TwigForm
         else
             return trim($html);
     }
+
+
 
 
 }
