@@ -89,7 +89,7 @@ class TwigForm
                         <div class="input-group">
                             <input type="'. $type .'" placeholder="'. $placeholder .'" class="form-control '. $class .'" id="'. $id .'" name="'. $id .'" '. $other .'>
                             <span class="input-group-btn">
-                              <button type="submit" class="btn btn-'. $colorbtn .'" '. $otherbtn .'>
+                              <button type="button" class="btn btn-'. $colorbtn .'" '. $otherbtn .'>
                                   <i class="'. $icon .'" aria-hidden="true"></i>
                               </button>
                             </span>
