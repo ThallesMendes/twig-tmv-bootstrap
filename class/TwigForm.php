@@ -226,7 +226,7 @@ class TwigForm
 
         $html .=           '</select>';
         $html .=           '<span class="input-group-btn">
-                              <button type="submit" class="btn btn-'. $colorbtn .'" '. $otherbtn .'>
+                              <button type="button" class="btn btn-'. $colorbtn .'" '. $otherbtn .'>
                                   <i class="'. $icon .'" aria-hidden="true"></i>
                               </button>
                             </span>
